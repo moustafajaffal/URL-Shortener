@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+p {
+  color: var(--grayish-violet);
+}
+button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+:root {
+  --cyan: hsl(180, 66%, 49%);
+  --dark-violet: hsl(257, 27%, 26%);
+  --red: hsl(0, 87%, 67%);
+  --gray: hsl(0, 0%, 75%);
+  --grayish-violet: hsl(257, 7%, 63%);
+  --very-dark-blue: hsl(255, 11%, 22%);
+  --very-dark-violet: hsl(260, 8%, 14%);
+}
+body {
+  font-size: 18px;
+  font-family: 'poppins', 'sans serif';
+}
+
+main {
+  width: 100%;
+  background: #f0f1f6;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main form {
+  position: relative;
+  width: min(100% - 1rem, 48em);
+  border-radius: 0.5rem;
+  padding: 2.45rem;
+  overflow: hidden;
+  display: flex;
+  gap: 1rem;
+  margin-inline: auto;
+  background: var(--dark-violet);
+}
+.shorten {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+}
+.mobile {
+  display: none;
+}
+
+form input {
+  flex: 1;
+  background: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1.3rem;
+  font-family: inherit;
+  padding: 0.3rem;
+  z-index: 1;
+}
+button.submit {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  background: var(--cyan);
+  color: #fff;
+  z-index: 1;
+}
+
+/* SHORTS */
+.results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.results .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100% - 1rem, 48em);
+  margin-inline: auto;
+  background: #fff;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+}
+
+.results .item .copy {
+  background: var(--cyan);
+  color: #fff;
+  padding: 0.3em 1em;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+}
+.results .item > p:last-of-type {
+  color: var(--cyan);
+}
+/* loader */
+/* MEDIA QUERIES */
+@media (max-width: 48em) {
+  main form {
+    padding-inline: 1rem;
+    flex-direction: column;
+  }
+  form input {
+    padding-block: 0.8rem;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .results .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .results .item .copy {
+    width: 100%;
+  }
+}
